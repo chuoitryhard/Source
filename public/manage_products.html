@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products</title>
+    <link rel="stylesheet" href="styles_manage_products.css">
+</head>
+<body>
+    <!-- Chèn header chung -->
+    <div id="header-placeholder"></div>
+
+    <div class="page-title">
+        <h1>TRANG QUẢN LÝ</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <!-- Column for product input form -->
+            <div class="form-column">
+                <h2>THÔNG TIN MÓN</h2>
+                <form id="productForm" enctype="multipart/form-data">
+                    <input type="hidden" id="editProductId" name="editProductId">
+                    <label for="productName">Tên món:</label>
+                    <input type="text" id="productName" name="productName" required>
+                    <label for="productPrice">Giá tiền:</label>
+                    <input type="number" id="productPrice" name="productPrice" required>
+                    <label for="productCategory">Phân loại:</label>
+                    <select id="productCategory" name="productCategory">
+                        <option value="" selected>Vui lòng chọn</option>
+                        <option value="Cà phê">Cà phê</option>
+                        <option value="Sinh tố">Sinh tố</option>
+                        <option value="Nước ép">Nước ép</option>
+                        <option value="Trà sữa">Trà sữa</option>
+                    </select>
+                    <label for="productImage">Hình ảnh sản phẩm:</label>
+                    <input type="file" id="productImage" name="productImage" accept="image/*">
+                    <button type="submit">Thêm / Cập nhật</button>
+                </form>
+                <div id="notification" class="notification" style="display: none;">
+                    Product uploaded successfully!
+                </div>
+            </div>
+
+            <!-- Column for product list -->
+            <div class="product-list">
+                <h2>DANH SÁCH CÁC MÓN</h2>
+                <!-- Thanh tìm kiếm -->
+                <div class="search-container">
+                    <form id="searchForm">
+                        <input type="text" id="searchName" placeholder="Tìm kiếm theo tên" />
+                        <select id="searchCategory">
+                            <option value="all">All</option>
+                            <option value="Cà phê">Cà phê</option>
+                            <option value="Sinh tố">Sinh tố</option>
+                            <option value="Nước ép">Nước ép</option>
+                            <option value="Trà sữa">Trà sữa</option>
+                        </select>
+                        <button type="submit">Tìm</button>
+                    </form>
+                </div>
+                <div class="product-grid" id="productInfo">
+                    <!-- Các ô sản phẩm sẽ được hiển thị ở đây -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>© 2024 My Brand. All Rights Reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tải header từ file HTML
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+
+            // Tải danh sách sản phẩm khi trang được tải
+            fetchProducts();
+
+            // Xử lý gửi form tìm kiếm
+            document.getElementById('searchForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const searchName = document.getElementById('searchName').value.toLowerCase();
+                const searchCategory = document.getElementById('searchCategory').value;
+
+                filterProducts(searchName, searchCategory);
+            });
+
+            // Xử lý gửi form
+            document.getElementById('productForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const formData = new FormData(this);
+
+                addProduct(formData)
+                    .then(data => {
+                        const notification = document.getElementById('notification');
+                        notification.style.display = 'block';
+
+                        setTimeout(() => {
+                            notification.style.display = 'none';
+                        }, 3000);
+
+                        fetchProducts(); // Tải lại danh sách sản phẩm sau khi thêm hoặc cập nhật
+                        document.getElementById('productForm').reset();
+                        document.getElementById('editProductId').value = '';
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        });
+
+        
+        function addProduct(formData) {
+    // Xác định URL và phương thức dựa trên việc có hay không có ID sản phẩm
+    const productId = formData.get('editProductId');
+    const url = productId ? `/update/${productId}` : '/upload';
+    const method = productId ? 'PUT' : 'POST';
+
+    // Gửi dữ liệu đến server
+    return fetch(url, {
+        method: method,
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Xử lý dữ liệu phản hồi từ server nếu cần
+        return data;
+    });
+}
+
+        // Hàm để tải và hiển thị danh sách sản phẩm
+        function fetchProducts() {
+            fetch('/products')
+                .then(response => response.json())
+                .then(products => {
+                    window.allProducts = products; // Lưu danh sách sản phẩm toàn bộ để sử dụng cho tìm kiếm
+                    filterProducts(); // Hiển thị toàn bộ sản phẩm ban đầu
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // Hàm để lọc sản phẩm theo tên và danh mục
+        function filterProducts(name = '', category = '') {
+            const filteredProducts = window.allProducts.filter(product => {
+                const matchesName = product.name.toLowerCase().includes(name);
+                const matchesCategory = category === '' || category === 'all' || product.category === category;
+
+                return matchesName && matchesCategory;
+            });
+
+            displayProducts(filteredProducts);
+        }
+
+        // Hàm để hiển thị sản phẩm
+        function displayProducts(products) {
+            const productInfo = document.getElementById('productInfo');
+            productInfo.innerHTML = ''; // Xóa nội dung cũ
+
+            if (products.length === 0) {
+                productInfo.innerHTML = '<p>Không tìm thấy sản phẩm.</p>'; // Hiển thị thông báo nếu không có sản phẩm
+                return;
+            }
+
+            products.forEach(product => {
+                const formattedPrice = parseInt(product.price).toLocaleString('vi-VN'); // Format the price with spaces every three digits
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('product-item');
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>Giá: ${formattedPrice} Đồng</p>
+                    <p>Danh mục: ${product.category}</p>
+                    <div class="product-buttons">
+                        <button class="edit-button" onclick="editProduct('${product.id}', '${product.name}', '${product.price}', '${product.category}', '${product.image}')">Cập nhật</button>
+                        <button class="delete-button" onclick="deleteProduct('${product.id}')">Xóa</button>
+                    </div>
+                `;
+                productInfo.appendChild(productDiv);
+            });
+        }
+
+
+        function editProduct(id, name, price, category, image) {
+            document.getElementById('editProductId').value = id;
+            document.getElementById('productName').value = name;
+            document.getElementById('productPrice').value = price;
+            document.getElementById('productCategory').value = category;
+
+            // Hiển thị hình ảnh hiện tại của sản phẩm (nếu cần)
+            const productImageElement = document.getElementById('productImage');
+            if (productImageElement) {
+                productImageElement.value = ''; // Không thể thay đổi giá trị của input type=file qua JavaScript
+            }
+        }
+
+
+        // Hàm để xóa sản phẩm
+        function deleteProduct(id) {
+            fetch(`/delete/${id}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                fetchProducts(); // Cập nhật danh sách sản phẩm sau khi xóa
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

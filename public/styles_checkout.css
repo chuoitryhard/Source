@@ -1,0 +1,284 @@
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    z-index: 1000; /* Đảm bảo header nằm trên các phần khác */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+div{
+    margin-top: 10px;
+}
+
+hr{
+    margin-top: 20px;  
+}
+
+/* Drop button in header */
+.dropbtn {
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    height: 62px;
+    width: 90px;
+}
+
+/* Body styles to ensure flex layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Chiều cao tối thiểu bằng với viewport */
+}
+
+/* Main container style */
+.container {
+    width: 90%;
+    margin: 10px auto;
+    margin-top: -20px ;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Chiếm hết không gian giữa header và footer */
+    display: flex;
+    justify-items: center;
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 70px;
+    padding: 20px;
+}
+
+/* Combobox container and select styles */
+.combobox-container {
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}
+/* Delete button styles */
+button.delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.delete:hover {
+    background-color: darkred;
+}
+
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Order details styles */
+.order-details {
+    margin-top: 20px;
+}
+
+.order {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.order-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+/* Flex layout for search form and order details */
+.search-and-orders {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Đảm bảo xuống hàng khi không đủ không gian */
+}
+
+label{
+    margin-bottom: 10px;
+    padding-top: 10px;
+    display: block;
+}
+
+h3{
+    margin-bottom: 10px;
+    padding-top: 10px;
+    display: block;
+}
+
+/* Flex properties for search form */
+#searchForm {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px; /* Đảm bảo kích thước vừa đủ cho phần tìm kiếm */
+
+}
+
+/* Định dạng cho nút thanh toán */
+button.complete-payment {
+    background-color: #28a745; /* Màu xanh lá cây */
+}
+
+/* Định dạng cho nút hủy thanh toán */
+button.cancel-payment {
+    background-color: #dc3545; /* Màu đỏ */
+}
+
+/* Thay đổi màu khi di chuột qua nút */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Định dạng cho các phần tử của đơn hàng */
+.order {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.order h3 {
+    margin-top: 0;
+}
+
+.item {
+    margin-bottom: 10px;
+}
+
+
+/* Flex properties for order details */
+#orderDetails {
+    flex: 2;
+    min-width: 500px;
+    max-width: 800px; /* Đảm bảo thông tin đơn hàng không bị quá rộng */
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 5%;
+}
+
+/* styles_checkout.css */
+.payment-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.payment-dialog h3 {
+    margin-top: 0;
+}
+
+.payment-dialog label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.payment-dialog input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.payment-dialog button {
+    margin-right: 10px;
+}
+
+.payment-dialog .confirm-payment {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.payment-dialog .cancel-payment {
+    background-color: #f44336;
+    color: white;
+}
+
+
+
+/* Footer Styles */
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    border-top: 2px solid #ddd;
+    width: 100%;
+    margin-top: auto; /* Đảm bảo footer nằm ở dưới cùng khi nội dung ít */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .search-and-orders {
+        flex-direction: column; /* Đặt xuống hàng nếu không đủ không gian */
+    }
+
+    #searchForm, #orderDetails {
+        max-width: 100%; /* Đảm bảo các phần chiếm 100% khi xuống hàng */
+    }
+}

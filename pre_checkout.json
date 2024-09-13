@@ -1,0 +1,92 @@
+[
+  {
+    "id": "Phòng 1",
+    "items": [
+      {
+        "id": "1725640697434",
+        "name": "Cà phê sữa",
+        "price": 20000,
+        "quantity": 3
+      }
+    ],
+    "room": "Phòng 1",
+    "table": null,
+    "timestamp": "2024-09-10T03:43:16.055Z",
+    "addedAt": "2024-09-13T02:46:51.386Z"
+  },
+  {
+    "id": "Phòng 1",
+    "items": [
+      {
+        "id": "1725640728249",
+        "name": "Sinh tố bơ",
+        "price": 25000,
+        "quantity": 1
+      }
+    ],
+    "room": "Phòng 1",
+    "table": null,
+    "timestamp": "2024-09-10T03:43:16.055Z",
+    "addedAt": "2024-09-13T02:46:51.387Z"
+  },
+  {
+    "id": "Phòng 2",
+    "items": [
+      {
+        "id": "1725640728249",
+        "name": "Sinh tố bơ",
+        "price": 25000,
+        "quantity": 3
+      }
+    ],
+    "room": "Phòng 2",
+    "table": null,
+    "timestamp": "2024-09-10T03:50:01.350Z",
+    "addedAt": "2024-09-13T02:46:51.387Z"
+  },
+  {
+    "id": "Bàn 1",
+    "items": [
+      {
+        "id": "1725640697434",
+        "name": "Cà phê sữa",
+        "price": 20000,
+        "quantity": 1
+      }
+    ],
+    "room": null,
+    "table": "Bàn 1",
+    "timestamp": "2024-09-10T03:49:17.214Z",
+    "addedAt": "2024-09-13T02:46:51.387Z"
+  },
+  {
+    "id": "Bàn 1",
+    "items": [
+      {
+        "id": "1725692261673",
+        "name": "Trà sữa thái xanh",
+        "price": 20000,
+        "quantity": 1
+      }
+    ],
+    "room": null,
+    "table": "Bàn 1",
+    "timestamp": "2024-09-10T03:49:17.214Z",
+    "addedAt": "2024-09-13T02:46:51.387Z"
+  },
+  {
+    "id": "Bàn 2",
+    "items": [
+      {
+        "id": "1725692261673",
+        "name": "Trà sữa thái xanh",
+        "price": 20000,
+        "quantity": 1
+      }
+    ],
+    "room": null,
+    "table": "Bàn 2",
+    "timestamp": "2024-09-10T02:01:30.651Z",
+    "addedAt": "2024-09-13T02:46:51.388Z"
+  }
+]

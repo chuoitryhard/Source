@@ -1,0 +1,315 @@
+/* Định dạng chung */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: -10px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    padding-top: 0px; /* Điều chỉnh khoảng cách tùy thuộc vào chiều cao của header */
+    
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px; /* Giảm padding trên/bên dưới để phù hợp hơn */
+    z-index: 1000; /* Đảm bảo header nằm trên các phần khác */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Đảm bảo không che nội dung bằng cách thêm padding */
+}
+
+/* Định dạng wrapper */
+.wrapper {
+    display: flex;
+    width: 80%;
+    margin-bottom: auto;
+    position: relative;
+}
+
+/* Đường kẻ chia đôi giữa phòng và bàn */
+.divider {
+    width: 2px;
+    background-color: #ccc;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Định dạng container */
+.container {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Định dạng tiêu đề */
+h1 {
+    text-align: center;
+    margin-bottom: 30px; /* Khoảng cách giữa tiêu đề và phần bên dưới */
+    padding-top: 10px; /* Khoảng cách từ trên cùng của phần tiêu đề */
+}
+
+/* Định dạng lưới cho các nút */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px; /* Khoảng cách giữa các nút */
+    width: 100%;
+}
+
+/* Định dạng nút */
+button {
+    width: 100px; /* Đảm bảo nút hình vuông */
+    height: 100px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px; /* Đường viền bo tròn nhẹ */
+    cursor: pointer;
+    font-size: 14px; /* Điều chỉnh kích thước chữ để phù hợp */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+/* Hiệu ứng khi di chuột qua nút */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Hiệu ứng hover cho các nút còn trống */
+/* Định dạng chung cho các nút */
+button {
+    transition: border 0.3s, transform 0.3s; /* Thêm hiệu ứng chuyển tiếp cho viền và phóng to */
+}
+
+/* Hiệu ứng hover cho các nút còn trống */
+.available:hover {
+    border: 2px solid #0056b3; /* Thêm viền khi hover qua nút còn trống */
+    transform: scale(1.05); /* Phóng to nhẹ nút khi hover */
+}
+
+/* Hiệu ứng hover cho các nút đã chiếm */
+.occupied:hover {
+    border: 2px solid #c82333; /* Thêm viền khi hover qua nút đã chiếm */
+    transform: scale(1.05); /* Phóng to nhẹ nút khi hover */
+}
+
+/* Định dạng màu cho các nút */
+.available {
+    background-color: rgb(7, 81, 105); /* Màu xanh khi còn trống */
+}
+
+.occupied {
+    background-color: lightcoral; /* Màu đỏ khi đã có người */
+}
+
+
+/* styles_room_and_table.css */
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+#orderDetailsContent {
+    margin-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+
+
+
+/* Footer */
+.footer {
+    background-color: #000000; /* Màu nền trắng cho footer */
+    color: #fffbfb; /* Màu chữ tối để nổi bật trên nền trắng */
+    text-align: center; /* Canh giữa nội dung trong footer */
+    padding: 15px 0; /* Khoảng cách trên và dưới trong footer */
+    font-size: 14px; /* Kích thước chữ trong footer */
+    border-top: 2px solid #ddd; /* Đường viền trên của footer */
+    margin-top: 20px; /* Khoảng cách trên của footer so với phần nội dung chính */
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;  /* Tăng kích thước chữ */
+}
+
+.hidden {
+    display: none;
+}
+
+#popup {
+    /* Popup styling */
+    display: none;
+}
+
+#popup.active {
+    display: block; /* Hiển thị popup khi có lớp 'active' */
+    
+}
+
+
+
+/* Đặt các kiểu chung cho overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Đặt các kiểu chung cho overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Popup kiểu bong bóng */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    width: 400px; /* Kích thước popup */
+}
+
+.popup.active {
+    display: block;
+}
+
+.boxcontent{
+    display: flex;
+    justify-content: space-between;
+}
+
+#popupMessage{
+    display: flex;
+    justify-content: center;
+}
+
+.popup button:hover{
+    background: #1064bd;
+}
+
+.popup button {
+    width: 100px;
+    height: 50px;
+    margin: 5%;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 14px; /* Giảm kích thước font chữ của nút */  
+}
+
+.popup .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+.popup button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Nút đóng popup */
+#closePopup {
+    background: #dc3545;
+    border: none;
+}
+
+#closePopup:hover{
+    background: #dd0d22;
+}
+
+/* Các trạng thái của phòng/bàn */
+.available {
+    background-color: rgb(7, 81, 105); /* Màu xanh khi còn trống */
+}
+
+.occupied {
+    background-color: lightcoral; /* Màu đỏ khi đã có người */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    border-top: 2px solid #ddd;
+    width: 100%;
+    margin-top: auto; /* Đảm bảo footer nằm ở dưới cùng khi nội dung ít */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}

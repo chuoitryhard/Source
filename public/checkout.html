@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THANH TOÁN</title>
+    <link rel="stylesheet" href="styles_checkout.css">
+    <script>
+        window.onload = function() {
+            const headerPlaceholder = document.getElementById('header-placeholder');
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    headerPlaceholder.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        };
+    </script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container">
+        <!-- Form tìm kiếm -->
+        <form id="searchForm">
+            <div class="combobox-container">
+                <label for="roomSelect">Chọn Phòng:</label>
+                <select id="roomSelect" name="roomSelect">
+                    <option value="">Chọn Phòng</option>
+                    <option value="Phòng 1">Phòng 1</option>
+                    <option value="Phòng 2">Phòng 2</option>
+                    <option value="Phòng 3">Phòng 3</option>
+                    <option value="Phòng 4">Phòng 4</option>
+                    <option value="Phòng 5">Phòng 5</option>
+                </select>
+            </div>
+
+            <div class="combobox-container">
+                <label for="tableSelect">Chọn Bàn:</label>
+                <select id="tableSelect" name="tableSelect">
+                    <option value="">Chọn Bàn</option>
+                    <option value="Bàn 1">Bàn 1</option>
+                    <option value="Bàn 2">Bàn 2</option>
+                    <option value="Bàn 3">Bàn 3</option>
+                    <option value="Bàn 4">Bàn 4</option>
+                    <option value="Bàn 5">Bàn 5</option>
+                </select>
+            </div>
+
+            <button type="submit" id="searchBtn">Tìm kiếm</button>
+        </form>
+
+        <div id="orderDetails" class="order-details">
+            <!-- Kết quả tìm kiếm sẽ hiển thị ở đây -->
+        </div>
+    </div>
+
+    <!-- Hộp thoại thanh toán -->
+    <div id="paymentDialog" class="payment-dialog" style="display: none;">
+        <h3>Chọn phương thức thanh toán</h3>
+        <label>
+            <input type="radio" name="paymentMethod" value="cash" checked> Tiền mặt
+        </label>
+        <label>
+            <input type="radio" name="paymentMethod" value="bankTransfer"> Chuyển khoản
+        </label>
+
+        <!-- Thanh toán tiền mặt -->
+        <div id="cashPayment" style="display: block;">
+            <p id="totalAmount">Tổng số tiền cần thanh toán: <span id="total">0</span></p>
+            <label for="cashAmount">Nhập số tiền khách đưa:</label>
+            <input type="number" id="cashAmount" placeholder="Nhập số tiền" />
+            <p id="changeAmount">Tiền thừa: <span id="change">0</span></p>
+        </div>
+
+        <!-- Thanh toán chuyển khoản -->
+        <div id="bankTransferPayment" style="display: none;">
+            <p>Quét mã QR để thanh toán:</p>
+            <img src="qr_code_placeholder.png" alt="Mã QR" />
+        </div>
+
+        <button id="confirmPayment">Xác nhận thanh toán</button>
+        <button id="cancelPaymentDialog">Hủy</button>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+<footer class="footer">
+    <p>© 2024 My Brand. All Rights Reserved.</p>
+</footer>
+</html>

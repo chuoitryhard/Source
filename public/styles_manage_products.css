@@ -1,0 +1,274 @@
+/* Kiểu dáng cho Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px; /* Giảm padding trên/bên dưới để phù hợp hơn */
+    z-index: 1000; /* Đảm bảo header nằm trên các phần khác */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Đảm bảo không che nội dung bằng cách thêm padding */
+}
+
+/* Đảm bảo nội dung không bị che khuất bởi header */
+body {
+    margin-top: -50px;
+    padding-top: 60px; /* Độ cao của header + padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu của trang */
+    
+    
+}
+
+h2{
+    margin-bottom: 20px; /* Khoảng cách giữa tiêu đề và phần bên dưới */
+    padding-top: 10px; /* Khoảng cách từ trên cùng của phần tiêu đề */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 40px; /* Thay đổi kích thước logo nếu cần */
+}
+
+/* Kiểu dáng cho tiêu đề trang */
+.page-title {
+    text-align: center;
+    margin-top: -40px; /* Khoảng cách với header */
+    padding: 15px 0;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+
+.page-title h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Kiểu dáng cho phần chính */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;   
+    margin-top: 60px; /* Điều chỉnh nếu cần thêm không gian cho header cố định */
+
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+    
+}
+
+/* Kiểu dáng cho cột form và danh sách sản phẩm */
+/* Kiểu dáng cho các phần tử trong form */
+.form-column select, 
+.form-column input, 
+.form-column button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-right: 2px solid #000000; /* Đường viền phân cách bên phải */
+}
+
+/* Kiểu dáng cho phần thông báo */
+.notification {
+    background-color: #28a745; /* Màu nền xanh lá cây cho thông báo thành công */
+    color: #fff; /* Màu chữ trắng để nổi bật trên nền xanh lá cây */
+    padding: 15px; /* Khoảng cách bên trong thông báo */
+    border-radius: 5px; /* Bo góc thông báo */
+    margin-bottom: 20px; /* Khoảng cách phía dưới thông báo */
+    font-size: 16px; /* Kích thước chữ */
+    text-align: center; /* Căn giữa văn bản trong thông báo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho thông báo */
+}
+
+
+/* Form column */
+.form-column {
+    width: 300px; /* Đặt chiều rộng cố định cho cột nhập thông tin */
+    padding: 20px;
+    border: 2px solid #ddd; /* Đường viền xung quanh cột nhập thông tin */
+    border-radius: 8px; /* Thêm góc bo tròn cho viền */
+    background-color: #fff; /* Đặt màu nền để viền nổi bật hơn */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước tổng thể */
+    height: 100%; /* Đảm bảo chiều cao của cột nhập thông tin bao phủ toàn bộ chiều cao của container */
+    min-height: 600px; /* Đặt chiều cao tối thiểu nếu cần thiết */
+    position: sticky;
+    top: 60px; /* Đặt vị trí dính của phần nhập thông tin */
+}
+
+.form-column select {
+    height: 40px;
+}
+
+
+/* Kiểu dáng cho form sản phẩm */
+#productForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Kiểu dáng cho input và select */
+#productForm input,
+#productForm select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Kiểu dáng cho nút thêm/cập nhật sản phẩm */
+#productForm button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#productForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Kiểu dáng cho thông báo */
+.notification {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* Kiểu dáng cho danh sách sản phẩm */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Kiểu dáng cho ô sản phẩm */
+/* Kiểu dáng cho ô sản phẩm */
+.product-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px; /* Giảm padding để thu nhỏ ô */
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 390px; /* Xác định chiều rộng cố định cho ô sản phẩm */
+   
+}
+
+/* Product list column */
+.product-list {
+    flex: 1; /* Chiếm không gian còn lại của container */
+    padding: 20px;
+}
+
+/* Kiểu dáng cho hình ảnh sản phẩm */
+.product-item img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của ô sản phẩm */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+    border-radius: 4px; /* Bo góc hình ảnh nếu cần */
+    margin-bottom: 10px; /* Khoảng cách giữa hình ảnh và nội dung văn bản */
+    object-fit: cover; /* Đảm bảo hình ảnh lấp đầy khung mà không bị biến dạng */
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng của ô */
+}
+
+/* Đặt các nút "Update" và "Delete" cùng một hàng ngang */
+.product-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Kiểu dáng cho nút */
+.product-item button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Nút "Update" */
+.product-item .edit-button {
+    background-color: #007bff;
+}
+
+.product-item .edit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Nút "Delete" */
+.product-item .delete-button {
+    background-color: #dc3545;
+}
+
+.product-item .delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Kiểu dáng cho thanh tìm kiếm */
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-container form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-container input,
+.search-container select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+.footer {
+    background-color: #000000; /* Màu nền trắng cho footer */
+    color: #fffbfb; /* Màu chữ tối để nổi bật trên nền trắng */
+    text-align: center; /* Canh giữa nội dung trong footer */
+    padding: 15px 0; /* Khoảng cách trên và dưới trong footer */
+    font-size: 14px; /* Kích thước chữ trong footer */
+    border-top: 2px solid #ddd; /* Đường viền trên của footer */
+    margin-top: 20px; /* Khoảng cách trên của footer so với phần nội dung chính */
+}

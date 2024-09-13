@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Dropdown Example</title>
+    <link rel="stylesheet" href="styles_header.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="Brand Logo"> <!-- Thay thế logo.png bằng đường dẫn logo của bạn -->
+                </a>
+            </div>
+            <div class="nav-section">
+                <nav class="nav">
+                    <ul class="main-nav">
+                        <li><a href="manage_products.html">QUẢN LÝ MENU</a></li>
+                        <li><a href="product_list.html">MENU</a></li>
+                        <li><a href="room_and_table.html">PHÒNG VÀ BÀN</a></li>
+                        <li><a href="checkout.html">THANH TOÁN</a></li>
+                        <div class="dropdown">
+                            <button class="dropbtn">KHÁC</button>
+                            <div class="dropdown-content">
+                                <a href="kitchen.html">Nhà bếp</a>
+                                <a href="search_order.html">Tìm kiếm đơn</a>
+                                <a href="#">Tùy chọn 3</a>
+                            </div>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+            
+            
+        </div>
+    </header>
+    <div class="content">
+        <!-- Nội dung trang -->
+    </div>
+    <script src="header.js"></script>
+</body>
+</html>

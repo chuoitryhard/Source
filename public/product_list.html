@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="styles_product_list.css">
+</head>
+<body>
+    <!-- Chèn header chung -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+            </div>
+            <div class="category-filter">
+                <h3>Lọc theo danh mục</h3>
+                <div id="categoryList">
+                    <!-- Các danh mục sẽ được chèn vào đây -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Area -->
+        <div class="product-area">
+            <h1>MENU</h1>
+            <div id="productList" class="product-grid">
+                <!-- Danh sách sản phẩm sẽ được chèn vào đây -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Nút mở sidebar -->
+    <button id="openSidebarButton" class="sidebar-toggle">☰</button>
+
+    <!-- Sidebar mới bên phải -->
+    <div class="right-sidebar" id="rightSidebar">
+        <h2>DANH SÁCH ĐÃ CHỌN</h2>
+        <button id="closeSidebarButton" class="close-button">×</button> <!-- Nút đóng -->
+        <ul id="selectedItemsList" class="selected-items-list">
+            <!-- Các món đã chọn sẽ được thêm vào đây -->
+        </ul>
+        
+        
+        <!-- Combobox chọn phòng -->
+        <div class="combobox-container">
+            <label for="roomSelect">Chọn Phòng:</label>
+            <select id="roomSelect">
+                <option value="">Chọn Phòng</option>
+                <option id="101" value="Phòng 1">Phòng 1</option>
+                <option id="102" value="Phòng 2">Phòng 2</option>
+                <option id="103" value="Phòng 3">Phòng 3</option>
+                <option id="104" value="Phòng 4">Phòng 4</option>
+                <option id="105" value="Phòng 5">Phòng 5</option>
+                <option id="106" value="Phòng 6">Phòng 6</option>
+                <option id="107" value="Phòng 7">Phòng 7</option>
+                <option id="108" value="Phòng 8">Phòng 8</option>
+                <option id="109" value="Phòng 9">Phòng 9</option>
+                <option id="110" value="Phòng 10">Phòng 10</option>
+                <option id="111" value="Phòng 11">Phòng 11</option>
+                <option id="112" value="Phòng 12">Phòng 12</option>
+                <option id="113" value="Phòng 13">Phòng 13</option>
+                <option id="114" value="Phòng 14">Phòng 14</option>
+                <option id="115" value="Phòng 15">Phòng 15</option>
+                <option id="116" value="Phòng 16">Phòng 16</option>
+                <option id="117" value="Phòng 17">Phòng 17</option>
+                <option id="118" value="Phòng 18">Phòng 18</option>
+                <option id="119" value="Phòng 19">Phòng 19</option>
+                <option id="120" value="Phòng 20">Phòng 20</option>
+           
+                <!-- Thêm nhiều phòng theo nhu cầu -->
+            </select>
+        </div>
+        
+        <!-- Combobox chọn bàn -->
+        <div class="combobox-container">
+            <label for="tableSelect">Chọn Bàn:</label>
+            <select id="tableSelect">
+                <option value="">Chọn Bàn</option>
+                <option id="1" value="Bàn 1">Bàn 1</option>
+                <option id="2" value="Bàn 2">Bàn 2</option>
+                <option id="3" value="Bàn 3">Bàn 3</option>
+                <option id="4" value="Bàn 4">Bàn 4</option>
+                <option id="5" value="Bàn 5">Bàn 5</option>
+                <option id="6" value="Bàn 6">Bàn 6</option>
+                <option id="7" value="Bàn 7">Bàn 7</option>
+                <option id="8" value="Bàn 8">Bàn 8</option>
+                <option id="9" value="Bàn 9">Bàn 9</option>
+                <option id="10" value="Bàn 10">Bàn 10</option>
+                <option id="11" value="Bàn 11">Bàn 11</option>
+                <option id="12" value="Bàn 12">Bàn 12</option>
+                <option id="13" value="Bàn 13">Bàn 13</option>
+                <option id="14" value="Bàn 14">Bàn 14</option>
+                <option id="15" value="Bàn 15">Bàn 15</option>
+                <option id="16" value="Bàn 16">Bàn 16</option>
+                <option id="17" value="Bàn 17">Bàn 17</option>
+                <option id="18" value="Bàn 18">Bàn 18</option>
+                <option id="19" value="Bàn 19">Bàn 19</option>
+                <option id="20" value="Bàn 20">Bàn 20</option>
+               
+                <!-- Thêm nhiều bàn theo nhu cầu -->
+            </select>
+        </div>
+
+        <!-- Nút xóa và hoàn tất đơn hàng -->
+        <button id="clearOrder" class="clear-order-button">Xóa tất cả</button>
+        <button id="finishOrder" class="finish-order-button">Xong</button>
+    </div>
+    <script src="product_list.js"></script>
+    <footer class="footer">
+        <p>© 2024 My Brand. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

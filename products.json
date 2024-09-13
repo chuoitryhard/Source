@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1725640697434,
+    "name": "Cà phê sữa",
+    "price": "20000",
+    "category": "Cà phê",
+    "image": "/images/1725640697424.jpg"
+  },
+  {
+    "id": 1725640728249,
+    "name": "Sinh tố bơ",
+    "price": "25000",
+    "category": "Sinh tố",
+    "image": "/images/1725640728237.jpg"
+  },
+  {
+    "id": 1725692261673,
+    "name": "Trà sữa thái xanh",
+    "price": "20000",
+    "category": "Trà sữa",
+    "image": "/images/1725692261665.jpg"
+  },
+  {
+    "id": 1725983520792,
+    "name": "Nước ép cam",
+    "price": "20000",
+    "category": "Nước ép",
+    "image": "/images/1725983520765.jpg"
+  }
+]

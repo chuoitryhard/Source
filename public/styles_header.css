@@ -1,0 +1,148 @@
+/* Reset margin và padding để tránh sự khác biệt giữa các trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Định dạng cho header */
+.header {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: fixed; /* Giữ header cố định khi cuộn trang */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Giữ header luôn ở trên cùng */
+}
+
+/* Định dạng container để căn giữa các phần tử trong header */
+.header-container {
+    width: 100%;
+    max-width: 1200px; /* Giới hạn chiều rộng header để không bị quá rộng trên màn hình lớn */
+    margin: 0 auto; /* Căn giữa header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Định dạng cho logo */
+.logo img {
+    height: 50px;
+}
+
+/* Định dạng cho điều hướng */
+.nav-section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around; /* Căn đều khoảng cách giữa các mục */
+    align-items: center;
+}
+
+/* Định dạng cho các liên kết điều hướng */
+.main-nav {
+    list-style: none;
+    display: flex; /* Giúp các liên kết nằm ngang */
+    justify-content: space-between; /* Đảm bảo khoảng cách đều giữa các liên kết */
+    align-items: center; /* Căn giữa các liên kết theo chiều dọc */
+    height: 35px;
+}
+
+.main-nav li {
+    margin: 0 20px; /* Khoảng cách giữa các liên kết */
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.main-nav a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Định dạng cho nút dropdown giống như các liên kết điều hướng */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px; /* Tạo khoảng cách bên cạnh */
+}
+
+/* Định dạng cho nút tùy chọn (giống các liên kết) */
+.dropbtn {
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    background: none; /* Bỏ background của nút */
+    margin-top: -17px;
+    height: 62px;
+    width: 90px;
+}
+
+/* Định dạng cho dropdown-content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 0px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Hiển thị popup khi hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    top: 100%; /* Đẩy nội dung xuống dưới nút */
+    left: 0; /* Căn trái theo nút */
+}
+
+/* Hiệu ứng hover cho nút dropdown giống với các liên kết */
+.dropdown:hover .dropbtn {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Định dạng cho nút đăng nhập và đăng ký */
+.account-section {
+    display: flex;
+    align-items: center;
+}
+
+.account-button {
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.account-button:hover {
+    background-color: #45a049;
+}
+
+/* Định dạng cho phần nội dung để tránh bị đè bởi header cố định */
+.content {
+    padding-top: 90px; /* Chừa khoảng trống cho header cố định */
+}

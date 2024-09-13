@@ -1,0 +1,157 @@
+/* styles_kitchen.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 35px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-top: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin: 80px 0 20px; /* Tăng khoảng cách trên trang do header và tên trang */
+    color: #333;
+    font-size: 40px; /* Tăng kích cỡ chữ tiêu đề */
+}
+
+#orderList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Giới hạn 3 container trên mỗi hàng */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* Căn giữa các container */
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: 900px; /* Giới hạn chiều rộng tối đa */
+    max-height: 600px;
+    margin-top: 20px; /* Khoảng cách từ tiêu đề */
+}
+
+.order-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Đảm bảo container chiếm toàn bộ chiều rộng cột */
+    aspect-ratio: 1; /* Tạo hình vuông */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Căn giữa các nội dung theo chiều dọc */
+    align-items: center; /* Căn giữa các nội dung theo chiều ngang */
+    box-sizing: border-box; /* Bao gồm padding và border trong kích thước */
+}
+
+.order-header {
+    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề đơn hàng */
+    text-align: center; /* Căn giữa tiêu đề đơn hàng */
+}
+
+.order-header h2 {
+    margin: 0;
+    font-size: 30px; /* Tăng kích cỡ chữ tiêu đề đơn hàng */
+    margin-bottom: 20px;
+}
+
+.order-header span {
+    display: block;
+    font-size: 20px; /* Tăng kích cỡ chữ cho thông tin phụ */
+    color: #555;
+    margin-top: 5px; /* Khoảng cách trên thông tin phụ */
+}
+
+.order-item-details {
+    margin-bottom: 20px; /* Khoảng cách dưới thông tin chi tiết đơn hàng */
+    font-size: 20px; /* Tăng kích cỡ chữ cho thông tin chi tiết đơn hàng */
+    text-align: center; /* Căn giữa thông tin chi tiết */
+}
+
+.order-item-details span {
+    display: block;
+    margin-top: 10px; /* Khoảng cách dưới mỗi món ăn */
+}
+
+.complete-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 20px; /* Tăng kích cỡ chữ cho nút hoàn thành */
+    text-align: center;
+    text-decoration: none;
+    align-self: center; /* Căn giữa nút hoàn thành */
+    width: 100%;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 20px; /* Tăng kích cỡ chữ cho nút hoàn thành */
+    text-align: center;
+    text-decoration: none;
+    align-self: center; /* Căn giữa nút hoàn thành */
+    width: 100%;
+    margin-top: 10px;
+}
+
+.complete-button:hover {
+    background-color: #45a049;
+}
+
+.cancel-button:hover {
+    background-color: #aa1524;
+}
+
+.complete-button:focus {
+    outline: none;
+}
+
+.complete-button:active {
+    background-color: #39843c;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    border-top: 2px solid #ddd;
+    width: 100%;
+    margin-top: auto; /* Đảm bảo footer nằm ở dưới cùng khi nội dung ít */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}

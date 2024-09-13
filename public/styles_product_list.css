@@ -1,0 +1,418 @@
+/* Tổng quát */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px; /* Giảm padding trên/bên dưới để phù hợp hơn */
+    z-index: 1000; /* Đảm bảo header nằm trên các phần khác */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Đảm bảo không che nội dung bằng cách thêm padding */
+}
+
+h1{
+    margin-top: -30px; /* Khoảng cách giữa tiêu đề và phần bên dưới */
+    padding: 10px; /* Khoảng cách từ trên cùng của phần tiêu đề */
+    font-size: 40px;
+}
+
+p{
+    margin-bottom: 5px; /* Khoảng cách giữa tiêu đề và phần bên dưới */
+    padding-top: 10px; /* Khoảng cách từ trên cùng của phần tiêu đề */
+    display: block;
+}
+
+h2{
+    font-size: 20px;
+    margin: 10px; /* Khoảng cách giữa tiêu đề và phần bên dưới */
+    
+}
+
+h3{
+    margin-bottom: 20px; /* Khoảng cách giữa tiêu đề và phần bên dưới */
+    padding-top: 10px; /* Khoảng cách từ trên cùng của phần tiêu đề */
+    display: block;
+}
+
+/* Main Content Styles */
+.container {
+    margin-top: 60px; /* Để tránh bị che khuất bởi header cố định */
+    display: flex;
+}
+
+/* Sidebar Styles */
+.left-sidebar {
+    width: 20%; /* Kích thước cố định cho sidebar */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 60px); /* Chiều cao sidebar cố định để phù hợp với chiều cao cửa sổ */
+    overflow-y: auto; /* Hiển thị thanh cuộn nếu nội dung vượt quá chiều cao */
+    margin: 10px;
+    margin-top: -80px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Khoảng cách giữa tiêu đề và phần bên dưới */
+    padding-top: 10px; /* Khoảng cách từ trên cùng của phần tiêu đề */
+}
+
+.category-filter label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Product Area Styles */
+.product-area {
+    flex: 1; /* Chiếm phần còn lại của không gian */
+    padding: 20px;
+    overflow-y: auto; /* Hiển thị thanh cuộn nếu cần */
+}
+
+/* Kiểu dáng cho danh sách sản phẩm */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Kiểu dáng cho ô sản phẩm */
+.product-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px; /* Giảm padding để thu nhỏ ô */
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 350px; /* Xác định chiều rộng cố định cho ô sản phẩm */
+   
+}
+
+/* Product list column */
+.product-list {
+    flex: 1; /* Chiếm không gian còn lại của container */
+    padding: 20px;
+}
+
+/* Kiểu dáng cho hình ảnh sản phẩm */
+.product-item img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của ô sản phẩm */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+    border-radius: 4px; /* Bo góc hình ảnh nếu cần */
+    margin-bottom: 10px; /* Khoảng cách giữa hình ảnh và nội dung văn bản */
+    object-fit: cover; /* Đảm bảo hình ảnh lấp đầy khung mà không bị biến dạng */
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng của ô */
+}
+
+
+.product-item .order-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.product-item .order-button:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+.footer {
+    background-color: #000000; /* Màu nền cho footer */
+    color: #fffbfb; /* Màu chữ để nổi bật trên nền */
+    text-align: center; /* Canh giữa nội dung trong footer */
+    padding: 15px 0; /* Khoảng cách trên và dưới trong footer */
+    font-size: 14px; /* Kích thước chữ trong footer */
+    border-top: 2px solid #ddd; /* Đường viền trên của footer */
+    margin-top: 20px; /* Khoảng cách trên của footer so với phần nội dung chính */
+}
+
+/* Kiểu dáng cho nút mở sidebar */
+.open-sidebar-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001; /* Đặt nó trên sidebar */
+}
+
+.open-sidebar-button::before {
+    content: '→'; /* Mũi tên mở */
+    font-size: 20px;
+}
+
+/* Kiểu dáng cho sidebar mới bên phải */
+/* Sidebar Styles */
+.right-sidebar {
+    position: fixed;
+    top: 60px; /* Đặt dưới header */
+    right: -350px; /* Bắt đầu ngoài màn hình */
+    width: 300px;
+    height: calc(100% - 60px); /* Trừ chiều cao của header */
+    padding: 10px; /* Khoảng cách bên trong để nội dung không sát viền */
+    background-color: #f1f1f1;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    overflow-y: auto;
+    transition: right 0.3s ease; /* Hiệu ứng trượt */
+    z-index: 990; /* Đảm bảo thanh sidebar nằm dưới header */
+}
+
+/* Khi mở, di chuyển sidebar vào màn hình */
+.right-sidebar.open {
+    right: 0;
+}
+
+
+/* Kiểu dáng cho danh sách các món đã chọn */
+.selected-items-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.selected-items-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    width: 90%;
+}
+
+.selected-items-list li button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.selected-items-list li button:hover {
+    background-color: #c82333;
+}
+
+/* Kiểu dáng cho combobox container */
+.combobox-container {
+    margin: 15px 0; /* Khoảng cách trên dưới giữa các combobox */
+    width: 100%; /* Chiều rộng chiếm toàn bộ container */
+}
+
+.combobox-container label {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.combobox-container select {
+    width: 100%; /* Chiều rộng của combobox */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Nút hủy toàn bộ đơn */
+.clear-order-button,
+.finish-order-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.clear-order-button:hover,
+.finish-order-button:hover {
+    background-color: #0056b3;
+}
+
+#openSidebarButton:hover,
+#closeSidebarButton:hover {
+    background-color: #b62020;
+}
+
+/* Nút mở sidebar */
+#openSidebarButton {
+    position: fixed;
+    top: 90px; /* Khoảng cách từ trên cùng của viewport */
+    right: 30px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 1002; /* Đảm bảo nút nằm trên các phần tử khác trong sidebar */
+}
+
+/* Nút kéo sidebar */
+#toggleSidebar {
+    position: fixed;
+    top: 70px; /* Đảm bảo nút kéo nằm cùng vị trí với các nút mở và đóng */
+    right: 110px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Ẩn nút khi sidebar mở */
+.sidebar-toggle.hidden {
+    display: none;
+}
+
+.right-sidebar ul {
+    padding-left: 0; /* Loại bỏ padding mặc định của ul */
+    list-style-type: none; /* Loại bỏ các dấu chấm của list */
+    padding: 10px 15px; /* Tạo khoảng cách cho nội dung ul không sát viền của sidebar */
+}
+
+.right-sidebar li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px; /* Khoảng cách giữa nội dung và viền của mỗi phần tử */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước phần tử */
+    margin: 30px 20px; /* Khoảng cách với viền sidebar */
+    border-radius: 8px; /* Tạo các góc bo tròn cho phần tử */
+    background-color: #fff; /* Màu nền cho các phần tử để nổi bật hơn */
+}
+
+.right-sidebar ul {
+    padding-left: 0; /* Loại bỏ padding mặc định của ul */
+    list-style-type: none; /* Loại bỏ các dấu chấm của list */
+}
+
+.right-sidebar li button {
+    align-self: center; /* Đảm bảo nút được căn giữa */
+}
+
+.right-sidebar .product-name {
+    text-align: center; /* Căn giữa tên sản phẩm */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Đảm bảo tên sản phẩm không tràn quá chiều rộng, hiển thị "..." nếu tên quá dài */
+}
+
+
+.product-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    margin: 0; /* Loại bỏ margin để căn giữa */
+    white-space: nowrap; /* Ngăn không cho văn bản xuống dòng */
+    overflow: hidden; /* Ẩn phần văn bản bị tràn */
+    text-overflow: ellipsis; /* Hiển thị dấu ba chấm khi văn bản bị cắt */
+}
+
+.product-number {
+    font-weight: bold;
+    color: #333;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    white-space: nowrap; /* Ngăn không cho văn bản xuống dòng */
+    padding: 0; /* Loại bỏ padding để kéo sát sang bên trái */
+    margin: 0; /* Loại bỏ margin để kéo sát sang bên trái */
+    width: calc(70%); /* Chiếm toàn bộ chiều rộng của sidebar, trừ padding */
+}
+
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa các nút tăng giảm số lượng */
+    margin-top: 10px;
+}
+
+.quantity-controls button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 5px; /* Thêm khoảng cách giữa các nút */
+}
+
+.quantity-controls .quantity {
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.remove-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.total-quantity {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px 0; /* Padding trên và dưới */
+    text-align: center; /* Căn giữa tổng số lượng */
+}

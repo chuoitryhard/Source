@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUẢN LÝ ĐƠN HÀNG</title>
+    <h1>QUẢN LÝ ĐƠN HÀNG</h1>
+    <link rel="stylesheet" href="styles_search_order.css">
+    <script>
+        // JavaScript để chèn header từ file header.html
+        window.onload = function() {
+            const headerPlaceholder = document.getElementById('header-placeholder');
+
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    headerPlaceholder.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        };
+    </script>
+</head>
+<body>
+    <!-- Phần header sẽ được chèn vào đây -->
+    <div id="header-placeholder"></div>
+    
+    <div class="container">
+        
+        
+        <!-- Form tìm kiếm -->
+        <form id="searchForm">
+            <div class="combobox-container">
+                <label for="roomSelect">Chọn Phòng:</label>
+                <select id="roomSelect" name="roomSelect">
+                    <option value="">Chọn Phòng</option>
+                    <option value="Phòng 1">Phòng 1</option>
+                    <option value="Phòng 2">Phòng 2</option>
+                    <option value="Phòng 3">Phòng 3</option>
+                    <option value="Phòng 4">Phòng 4</option>
+                    <option value="Phòng 5">Phòng 5</option>
+                    <!-- Thêm nhiều phòng theo nhu cầu -->
+                </select>
+            </div>
+            
+            <div class="combobox-container">
+                <label for="tableSelect">Chọn Bàn:</label>
+                <select id="tableSelect" name="tableSelect">
+                    <option value="">Chọn Bàn</option>
+                    <option value="Bàn 1">Bàn 1</option>
+                    <option value="Bàn 2">Bàn 2</option>
+                    <option value="Bàn 3">Bàn 3</option>
+                    <option value="Bàn 4">Bàn 4</option>
+                    <option value="Bàn 5">Bàn 5</option>
+                    <!-- Thêm nhiều bàn theo nhu cầu -->
+                </select>
+            </div>
+            
+            <button type="submit" id="searchBtn">Tìm kiếm</button>
+        </form>
+        
+        <div id="orderDetails" class="order-details">
+            <!-- Kết quả tìm kiếm sẽ hiển thị ở đây -->
+        </div>
+    </div>
+    
+    <script src="search_order.js"></script>
+</body>
+<footer class="footer">
+    <p>© 2024 My Brand. All Rights Reserved.</p>
+</footer>
+</html>
